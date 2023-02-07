@@ -12,8 +12,12 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {login }from '../firebase'
-import { useNavigate } from "react-router-dom";
+import {db, login }from '../firebase'
+import { Navigate, useNavigate } from "react-router-dom";
+import { useStateValue } from '../context/StateProvider';
+import { actionTypes } from '../reducer/reducer';
+import { doc, getDoc } from 'firebase/firestore';
+import axios from 'axios';
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -31,26 +35,28 @@ const theme = createTheme();
 
 export default function SignIn() {
     const navigate=useNavigate()
-
-    const [user,setUser]=React.useState({
+    const [{rolusuario},dispatch] = useStateValue()
+    const [userdata,setUserdata]=React.useState({
         email:"",
         password:""
     });
 
 
     const hadleChange=({target:{name,value}})=>{
-        setUser({...user,[name]:value})
+        setUserdata({...userdata,[name]:value})
     }
-
-  const handleSubmitSignim = (event) => {
+   
+  
+  const handleSubmitSignim = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    const datai = new FormData(event.currentTarget);
     console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+      email: datai.get('email'),
+      password: datai.get('password'),
     });
-    login(user.email,user.password);
-    
+    await login(userdata.email,userdata.password);
+    console.log('rolusuario :>> ', rolusuario);
+
     navigate("/");
   };
 
@@ -74,7 +80,7 @@ export default function SignIn() {
           </Typography>
           <Box component="form" onSubmit={handleSubmitSignim} noValidate sx={{ mt: 1 }}>
             <TextField
-             value={user.email}
+             value={userdata.email}
              onChange={hadleChange}
               margin="normal"
               required
@@ -86,7 +92,7 @@ export default function SignIn() {
               autoFocus
             />
             <TextField
-             value={user.password}
+             value={userdata.password}
              onChange={hadleChange}
               margin="normal"
               required

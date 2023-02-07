@@ -56,7 +56,7 @@ export default function Producto({key,product:{id,titulo,subtitulo,descripcion, 
   }
 
   return (
-    <Card sx={{ maxWidth: 345 }} >
+    <Card sx={{ maxWidth: 345 }} key={key}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} >

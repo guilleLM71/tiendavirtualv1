@@ -3,7 +3,8 @@ export const initialState={
     user:null,
     datacompra:{},
     datapago:{},
-    mensajelisto:""
+    mensajelisto:"",
+    rolusuario:""
 
 }
 export const actionTypes={
@@ -14,6 +15,7 @@ export const actionTypes={
     set_datacompra:"set_datacompra",
     set_datapago:"set_datapago",
     set_mensaje:"set_mensaje",
+    set_rol:"set_rol",
 }
    
 export const gettotalcarrito = (carrito) =>{
@@ -51,7 +53,8 @@ export const gettotalcarrito = (carrito) =>{
             return{
             ...state,
             carrito:action.carrito,
-            user: action.user
+            user: action.user,
+            rolusuario:action.rolusuario
         }
         case "set_datacompra":
             return{
@@ -68,6 +71,11 @@ export const gettotalcarrito = (carrito) =>{
             return{
             ...state,
             mensajelisto: action.mensajelisto
+        }
+        case "set_rol":
+            return{
+            ...state,
+            rolusuario: action.rolusuario
         }
 
         default: return state;

@@ -1,3 +1,4 @@
+import axios from "axios";
 import { initializeApp } from "firebase/app";
 import {  GoogleAuthProvider,getAuth,
 signInWithPopup,
@@ -23,7 +24,8 @@ const firebaseConfig = {
     projectId: "tiendavirtual-228b5",
     storageBucket: "tiendavirtual-228b5.appspot.com",
     messagingSenderId: "586401660582",
-    appId: "1:586401660582:web:21e14c792e76bec2413e67"
+    appId: "1:586401660582:web:21e14c792e76bec2413e67",
+    
   };
 
   const app=initializeApp(firebaseConfig)
@@ -34,23 +36,34 @@ const firebaseConfig = {
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
       const user = res.user;
-      await addDoc(collection(db, "users"), {
+      await axios.post("http://localhost:4000/api/auth", {
         uid: user.uid,
-        authProvider: "local",
         email,
-      });
+        rol: "usuario" 
+      }
+      ,{
+        headers: { 'Content-aplication': 'application/json'}
+      }
+      
+      );
+
+
+
     } catch (err) {
       console.error(err);
       alert(err.message);
     }
   };
-  const login= async (email, password) => {
+  const login = async (email, password) => {
     try {
-      await signInWithEmailAndPassword(auth, email, password)
+      const data = await signInWithEmailAndPassword(auth, email, password)
+      //console.log('data :>> ', data);
+      /*
       .then((res) => {
         console.log('auth :>> ', res);
-        return res.user.email
-      });
+        
+      });*/
+      return data
     } catch (err) {
       console.error(err);
       alert(err.message);

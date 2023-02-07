@@ -1,0 +1,256 @@
+table{
+    font-weight: bold;
+    width: auto;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin: 12px;
+
+}
+thead{
+    background-color: #2c8bd8;
+    width: auto;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin: 12px;
+
+}
+tr{
+    padding: 9px;
+    margin: 9px;
+  
+}
+th{
+    padding: 6px;
+    margin: 6px;
+
+}
+
+
+.in-buscar{
+    
+    border-radius: 10%;
+    width: max-content;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 9px;
+    padding-right: 9px;
+    color: #727272;
+    border: 2px;
+    line-height: 1.25; 
+    border-radius: 0.25rem; 
+    border-width: 1px; 
+    appearance: none; 
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); 
+   
+}
+.in-buscar:hover{
+    border-color: #1797ff;
+}
+.imagen-prod{
+    padding-top: 0.5rem;
+padding-bottom: 0.5rem; 
+padding-left: 0.75rem;
+padding-right: 0.75rem; 
+border-width: 2px; 
+border-color: #3B82F6; 
+
+}
+.productos{
+    display: flex; 
+justify-content: center; 
+align-items: center; 
+margin-top: 10px;
+
+}
+
+.btn-modal{
+    background-color: #3B82F6; 
+color: #ffffff; 
+font-weight: 700; 
+text-transform: uppercase; 
+padding-top: 0.4rem;
+padding-bottom: 0.4rem; 
+padding-left: 0.4rem;
+padding-right: 0.4rem; 
+font-size: 0.875rem;
+line-height: 1.25rem; 
+border-radius: 0.25rem; 
+box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); 
+
+
+
+
+
+
+
+
+}
+
+.btn-modal:hover{
+    outline: 0; 
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+}
+.btn-modal:focus{
+    outline: 0; 
+    margin-bottom: 0.25rem; 
+margin-right: 1rem; 
+transition-property: all; 
+transition-duration: 150ms; 
+transition-timing-function: linear; 
+}
+
+.cont-model{
+    display: flex; 
+overflow-y: auto; 
+overflow-x: hidden; 
+position: fixed; 
+top: 0;
+right: 0;
+bottom: 0;
+left: 0; 
+z-index: 50; 
+color: #000000; 
+justify-content: center; 
+align-items: center; 
+width: 100%; 
+outline: 0; 
+
+}
+.cont-model:focus{
+    outline: 0; 
+}
+
+.bg-model{
+    position: fixed; 
+top: 0;
+right: 0;
+bottom: 0;
+left: 0; 
+z-index: 40; 
+background-color: #000000; 
+opacity: 0.25; 
+
+
+}
+
+.card-model{
+    position: fixed; 
+top: 0;
+right: 0;
+bottom: 0;
+left: 0; 
+z-index: 40; 
+background-color: #000000; 
+opacity: 0.25; 
+
+}
+
+.card-cont-model{
+    display: flex; 
+position: relative; 
+background-color: #ffffff; 
+flex-direction: column; 
+width: 100%; 
+border-radius: 0.5rem; 
+border-width: 0; 
+outline: 0; 
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+}
+
+.card-cont-model:focus{
+    outline: 0; 
+}
+
+.header-modal{
+display: flex; 
+padding: 0.75rem; 
+justify-content: space-between; 
+align-items: flex-start; 
+border-color: #727272;
+border-top-width: 0px;
+border-right-width: 0px;
+border-left-width: 0px;
+border-bottom: 1px; 
+border-style: ridge;
+
+}
+
+.title-modal{
+    font-size: 1.5rem;
+line-height: 2rem; 
+font-weight: 600; 
+
+}
+
+.text-close-modal{
+display: block; 
+font-size: 1.5rem;
+line-height: 2rem; 
+width: 1.5rem; 
+height: 1.5rem; 
+outline: 0; 
+
+}
+
+.btn-close-modal{
+    float: right; 
+    padding: 0.25rem; 
+    margin-left: auto; 
+    background-color: transparent; 
+    color: #000000; 
+    font-size: 1.875rem;
+    line-height: 2.25rem; 
+    font-weight: 600; 
+    line-height: 1; 
+    border-width: 0; 
+    
+    opacity: 0.2; 
+}
+
+.btn-close-modal:focus{
+    outline: 0; 
+}
+
+.body-modal{
+    position: relative; 
+padding: 0.5rem; 
+color: #000000; 
+flex: 1 1 auto; 
+width: auto; 
+
+}
+
+.pag-arrows{
+    background-color: #60A5FA; 
+
+} 
+.pag-arrows:hover{
+    background-color: #2563EB; 
+    border-radius: 0.125rem; 
+
+}
+.pag-texts{
+    display: flex; 
+padding: 0.25rem; 
+font-weight: 700; 
+flex-direction: row; 
+justify-content: center; 
+align-items: center; 
+border-radius: 0.375rem; 
+border-width: 2px; 
+border-color: #3B82F6; 
+gap: 0.75rem; 
+
+}
+
+.pag-content{
+    display: flex; 
+margin-left: 1.25rem;
+margin-right: 1.25rem; 
+color: #000000; 
+flex-direction: row; 
+justify-content: space-around; 
+align-items: center; 
+border-radius: 0.125rem; 
+
+}

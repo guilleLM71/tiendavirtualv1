@@ -16,7 +16,7 @@ import { actionTypes } from '../reducer/reducer';
 export default function Navbar({children}) {
 
   const navigate=useNavigate()
-  const [{carrito,user},dispatch] = useStateValue()
+  const [{carrito,user,rolusuario},dispatch] = useStateValue()
 
   function logout(){
     auth.signOut()
@@ -24,11 +24,15 @@ export default function Navbar({children}) {
       {
         type: actionTypes.rm_user,
         user:null,
-        carrito:[]
+        carrito:[],
+        rolusuario:""
           
     })
     navigate("/")
   }
+
+
+
 
   return (
     <>
@@ -52,22 +56,40 @@ export default function Navbar({children}) {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Hola {user? user.email:""}
           </Typography>
+
+
+          <Link to="/admin">
+         
+         {
+           rolusuario=="admin"? 
+           <IconButton aria-label="">
+             <Button  variant='text' sx={{ color: "white" }}>Productos</Button>    
+         </IconButton>  :
+           null
+         }
+         
+       </Link>
+
+
           <Link to="/signin">
           <IconButton aria-label="">
             <Button onClick={logout} variant='text' sx={{ color: "white" }}>{user?"SignOut":"SignIn"}</Button>    
             </IconButton>  
           </Link>
+
+          <Link to="/compras">
+          {rolusuario!="admin"? 
                     
-            <Link to="/compras">
+          
             <IconButton aria-label="add to favorites">
                       <Badge badgeContent={carrito.length} color="error">
                       <AddShoppingCartIcon  sx={{ color: "white" }}/>
                       </Badge>
                     </IconButton>
-            </Link>
-                      
-
-
+            
+                     :null 
+        }
+</Link>
         </Toolbar>
       </AppBar>
     </Box>
