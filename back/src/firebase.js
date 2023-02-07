@@ -6,7 +6,7 @@ const { initializeApp } = require ("firebase/app");
 const { getFirestore } = require("firebase/firestore")
 var serviceAccount = {
   type: process.env.TYPE,
-  projectId: process.env.PROYECTOID,
+  projectId: process.env.PROJECTID,
   private_key_id: process.env.PRIVATEKEYID,
   private_key: process.env.PRIVATEKEY,
   client_email: process.env.CLIENTEMAIL,
