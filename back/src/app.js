@@ -8,9 +8,9 @@ import pkg from "../package.json";
 
 
 //import pacientRoutes from "./routes/paciente.routes";
-
-//import authRoutes from "./routes/auth.routes";
-
+import authroutes from "../routes/authroutes";
+import productosroutes from "../routes/productsroutes";
+import uploadroutes from "../routes/uploadroutes";
 //import { createRoles, createAdmin} from "./libs/initialSetup";
 //import {conn}  from './database';
 
@@ -68,6 +68,7 @@ app.post("/api/checkout", async (req, res) =>{
 
 // Routes
 
-//app.use("/api/auth", authRoutes);
-
+app.use("/api/upload", uploadroutes);
+app.use("/api/productos", productosroutes);
+app.use("/api/auth", authroutes);
 export default app;
